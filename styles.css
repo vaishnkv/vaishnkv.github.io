@@ -1,0 +1,67 @@
+/* Base Styles */
+:root {
+    --primary-color: #2d3436;
+    --secondary-color: #0984e3;
+    --text-color: #2d3436;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Navigation */
+.navbar {
+    background: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+/* Sections */
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* Cards & Grid */
+.grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Lists */
+.project-list, .reading-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-list li, .reading-list li {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 3px solid var(--secondary-color);
+}
