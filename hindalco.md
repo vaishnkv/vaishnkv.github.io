@@ -54,7 +54,8 @@ Expected interpolated data:
 ---
 
 ## 📊 Visual Representation
-![Data Structure](Screenshot%202025-04-07%20at%2011.11.28%E2%80%AFAM.png)
+![]()![Screenshot 2025-04-07 at 11 11 28 AM](https://github.com/user-attachments/assets/2630fa4a-7b3d-4c89-87de-5718beb2ff06)
+
 Green dots = observed values. All other values are estimated.
 
 ---
@@ -69,7 +70,7 @@ Green dots = observed values. All other values are estimated.
 ## Core Methodologies Used:
 
 * A single Model consist of 
-  * Transformers with time based attention instead of position based.
+  * Transformers with time based attention instead of position-based.
   * Variational Autoencoder
   * Bidirectional RNN
 
