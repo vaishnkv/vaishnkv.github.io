@@ -3,28 +3,538 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaishnav K V - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Vaishnav K V - AI Research Scientist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 3px solid #eee;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .experience-item h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item h4 {
+            color: #666;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .date {
+            color: #007bff;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .experience-item ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .skill-category h4 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .project-card h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tag {
+            background: #007bff;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio></li>
-            <li><a href="readings.html">Readings</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
-    <section class="hero-section">
-        <div class="content">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
             <h1>Vaishnav K V</h1>
-            <p class="tagline">I love the process of building something, ie converting something available in some paper (mostly some research paper) to something that helps people in the real world. I love anything that involves creating something new.</p>
+            <p>AI Research Scientist & Machine Learning Engineer</p>
+            <div class="contact-links">
+                <a href="mailto:vaishnavkv99@gmail.com">vaishnavkv99@gmail.com</a>
+                <a href="https://linkedin.com/in/vaishn99" target="_blank">LinkedIn</a>
+                <a href="https://github.com/vaishn99" target="_blank">GitHub</a>
+                <a href="tel:+917907499294">+91-7907499294</a>
+            </div>
         </div>
-    </section>
+    </header>
 
-    <script src="scripts.js"></script>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2>About</h2>
+                <div class="about-content">
+                    <img src="https://via.placeholder.com/180x180/007bff/white?text=VKV" alt="Vaishnav K V" class="profile-img">
+                    <div class="about-text">
+                        <p>I'm an AI Research Scientist at PrivaSapien Technologies with expertise in Machine Learning, Deep Learning, and Privacy-Preserving technologies. I hold an MTech in Artificial Intelligence from IISc Bangalore.</p>
+                        <p>My work focuses on synthetic data generation, differential privacy, and LLM fine-tuning. I've contributed to products worth $500K USD and have filed 2 patents in synthetic data generation.</p>
+                        <p>Currently participating in a fully sponsored program at HEC Paris, collaborating with companies like Mistral AI on privacy-preserving machine learning.</p>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$500K</div>
+                        <div class="stat-label">Revenue Impact</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Patents Filed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">8.3</div>
+                        <div class="stat-label">MTech CGPA</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <h2>Experience & Education</h2>
+                
+                <div class="experience-item">
+                    <h3>Research Scientist-2</h3>
+                    <h4>PrivaSapien Technologies, Bangalore</h4>
+                    <div class="date">March 2023 - Present</div>
+                    <ul>
+                        <li>Built CloneLM - context-aware synthetic data generation framework (2 patents filed)</li>
+                        <li>Developed physics-informed time-series interpolation model for production use</li>
+                        <li>Created cookie classifier achieving 88% F1 score on 30 lakh point dataset</li>
+                        <li>Contributed $500K USD in revenue through innovative ML solutions</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>MTech in Artificial Intelligence</h3>
+                    <h4>Indian Institute of Science (IISc), Bangalore</h4>
+                    <div class="date">August 2021 - August 2023</div>
+                    <ul>
+                        <li>CGPA: 8.3/10</li>
+                        <li>Thesis: "Analysing Mixing Fake Data With Real Data In The Context Of Model-Based Policy Optimisation"</li>
+                        <li>Advisor: Prof. Aditya Gopalan (Control, Learning Optimisation Lab)</li>
+                        <li>TA for Introduction to AI/ML lab</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>BTech in Electronics & Communication Engineering</h3>
+                    <h4>College of Engineering Trivandrum (CET)</h4>
+                    <div class="date">August 2017 - August 2021</div>
+                    <ul>
+                        <li>CGPA: 8.8/10</li>
+                        <li>Member of ISTE (Indian Society for Technical Education)</li>
+                        <li>All India Rank 5 - GATE ECE 2021 (Score: 1000)</li>
+                        <li>All India Rank 115 - GATE AEI 2021 (Score: 750)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Machine Learning & AI</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">PyTorch</span>
+                            <span class="skill-item">JAX/Flax</span>
+                            <span class="skill-item">Transformers</span>
+                            <span class="skill-item">HuggingFace</span>
+                            <span class="skill-item">LangChain</span>
+                            <span class="skill-item">PEFT</span>
+                            <span class="skill-item">VLLM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Development</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Flask</span>
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">Neo4j</span>
+                            <span class="skill-item">Redis</span>
+                            <span class="skill-item">ChromaDB</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Cloud & DevOps</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">Kubernetes</span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">AWS S3</span>
+                            <span class="skill-item">EC2</span>
+                            <span class="skill-item">ECS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Research Areas</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">Reinforcement Learning</span>
+                            <span class="skill-item">Differential Privacy</span>
+                            <span class="skill-item">Synthetic Data</span>
+                            <span class="skill-item">Deep Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2>Key Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h4>CloneLM</h4>
+                        <p>Context-aware semi-structured synthetic data generation framework with state-of-the-art features in privacy-preserved ML and differential privacy.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">2 Patents</span>
+                            <span class="project-tag">$500K Revenue</span>
+                            <span class="project-tag">JAX/Flax</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4>Physics-Informed Time-Series Model</h4>
+                        <p>Attention-based interpolation model for multivariate irregularly sampled time-series data using mTAN architecture with VAE, RNN, and Transformers.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Production</span>
+                            <span class="project-tag">Annual Contract</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4>Cookie Classifier</h4>
+                        <p>Lightweight, low-latency multi-class Naive Bayes model for cookie purpose prediction. Achieved 88% F1 score on 30 lakh point dataset.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">88% F1 Score</span>
+                            <span class="project-tag">Classical ML</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4>Financial Report Generator</h4>
+                        <p>LLM-based framework using RAG and LangChain to generate synthetic financial reports for cybersecurity deception technologies.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">RAG</span>
+                            <span class="project-tag">LangChain</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4>COVID-19 Modeling</h4>
+                        <p>Statistical analysis to assess the impact of lockdown measures on active COVID-19 cases in Karnataka state.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Statistical Analysis</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4>MBPO Test Bench</h4>
+                        <p>Complete re-implementation of Model-Based Policy Optimization for MDP environments to identify algorithm failure scenarios.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Reinforcement Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Vaishnav K V. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
